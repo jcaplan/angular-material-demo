@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, of as observableOf } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { NestedTreeControl } from '@angular/cdk/tree';
+
+export type Classification = {
+  name: string, children: Classification[]
+};
 
 @Component({
   selector: 'main-nav',
@@ -17,4 +22,40 @@ export class MainNavComponent {
     
   constructor(private breakpointObserver: BreakpointObserver) {}
   
+  data: Classification[] = [
+    {
+      name: "animalia",
+      children: [
+        {
+          name: "dog",
+          children: [
+            {
+              name: "poodle",
+              children: []
+            },
+            {
+              name: "retriever",
+              children: []
+            }
+          ]
+        },
+        {
+          name: "cat",
+          children: [
+            {
+              name: "tiger",
+              children: []
+            },
+            {
+              name: "siamese",
+              children: []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+
+  treeControl = new NestedTreeControl<Classification>(node => observableOf(node.children)); 
+
   }
