@@ -11,7 +11,7 @@ export type Classification = {
 @Component({
   selector: 'main-nav',
   templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.css']
+  styleUrls: ['./main-nav.component.css', './main-nav.component.scss']
 })
 export class MainNavComponent {
 

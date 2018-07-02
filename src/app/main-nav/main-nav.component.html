@@ -26,9 +26,9 @@
       <span>Application Title</span>
     </mat-toolbar>
     <mat-tree [dataSource]="data" [treeControl]="treeControl">
-      <mat-nested-tree-node *matTreeNodeDef="let node">
-        <button mat-icon-button type="button" (click)="treeControl.toggle(node)" [style.visibility]="node.children.length ? 'visible' : 'hidden'">
-          <mat-icon>{{treeControl.isExpanded(node) ? 'expand_more': 'chevron_right'}}</mat-icon>
+        <mat-nested-tree-node *matTreeNodeDef="let node" [ngClass]="{'root': node.name=='animalia'}">
+        <button (click)="treeControl.toggle(node)" [style.visibility]="node.children.length ? 'visible' : 'hidden'">
+            <i class="fas" [ngClass]="treeControl.isExpanded(node) ? 'fa-chevron-down': 'fa-chevron-right'"></i>
         </button>
         <a href="#">{{node.name}}</a>
         <ng-container matTreeNodeOutlet *ngIf="treeControl.isExpanded(node)"></ng-container>
