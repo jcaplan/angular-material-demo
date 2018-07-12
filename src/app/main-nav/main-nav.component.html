@@ -34,5 +34,9 @@
         <ng-container matTreeNodeOutlet *ngIf="treeControl.isExpanded(node)"></ng-container>
       </mat-nested-tree-node>
     </mat-tree>
+
+<quill-editor [(ngModel)]="editor"></quill-editor>
+<p>{{editor}}</p>
+<button type="button" (click)="onClick()">print</button>
   </mat-sidenav-content>
 </mat-sidenav-container>

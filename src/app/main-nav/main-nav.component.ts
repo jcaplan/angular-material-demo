@@ -58,4 +58,8 @@ export class MainNavComponent {
 
   treeControl = new NestedTreeControl<Classification>(node => observableOf(node.children)); 
 
-  }
+    editor: any;
+    onClick() {
+      console.log(this.editor);
+    }
+}

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { QuillModule } from 'ngx-quill';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -22,6 +24,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatIconModule,
     MatListModule,
     MatTreeModule,
+    QuillModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
